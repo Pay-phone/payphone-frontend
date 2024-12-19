@@ -49,7 +49,7 @@ export const useUserStore = defineStore("user", () => {
             loginUser.value = userInfo;
 
             alert(`${userInfo.username}님, 환영합니다!`);
-            router.push({ name: "DashboardView" }); // 로그인 성공 후 대시보드로 이동
+            router.push({ name: "dashboard" }); // 로그인 성공 후 대시보드로 이동
         } catch (error) {
             console.error("로그인 실패:", error.response || error);
             alert("로그인에 실패했습니다. 사용자 정보를 확인하세요.");
