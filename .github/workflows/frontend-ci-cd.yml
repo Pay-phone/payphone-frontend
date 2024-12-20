@@ -17,15 +17,21 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20
-
-      - name: Install dependencies and build
-        run: npm install
+          
+      - name: Install dependencies
+        run: |
+          cd payphone-frontend  # 디렉토리 이동
+          npm install
 
       - name: Build
-        run: npm run build
+        run: |
+          cd payphone-frontend  # 디렉토리 이동
+          npm run build
 
       - name: Deploy to S3
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        run: aws s3 sync dist/ s3://payphone-frontend-bucket --delete
+        run: |
+          cd payphone-frontend  # 디렉토리 이동
+          aws s3 sync dist/ s3://payphone-frontend-bucket --delete
