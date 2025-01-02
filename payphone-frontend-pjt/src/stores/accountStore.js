@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 import {ref} from "vue";
 import axios from "axios";
 
-const ACCOUNT_API = "http://localhost:8080/api/account";
+const ACCOUNT_API = "http://3.39.190.135:8080/api/account";
 
 export const useAccountStore = defineStore("account", () => {
     // 1. 계좌 생성
