@@ -3,7 +3,7 @@ import {defineStore} from "pinia";
 import axios from "axios"; 
 import router from "@/router"; 
 
-const REST_USER_AIP = `http://localhost:8080/api/auth`;
+const REST_USER_AIP = `http://3.39.190.135:8080/api/auth`;
 // Axios 요청 시 Authorization 헤더 자동 설정
 axios.interceptors.request.use(
     (config) => {
